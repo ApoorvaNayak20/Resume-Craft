@@ -1,34 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome | Resume Craft</title>
-  <link rel="stylesheet" href="css/style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Mode | Resume Craft</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <div id="siteHeader"></div>
-  <main class="container">
-<section class="hero"><div class="hero-grid">
-  <div><div class="eyebrow">Your career starts with a clear story</div>
-    <h1>Build a resume that opens doors.</h1>
-    <p>Resume Craft helps students and job seekers turn their education, skills and experiences into a polished, interview-ready resume.</p>
-    <div class="actions"><a class="btn" href="dashboard.html">Build your resume</a><a class="btn secondary" href="templates.html">Explore templates</a></div>
-  </div>
-  <div class="hero-card"><div class="fake-resume"><h2>YOUR NAME</h2><p class="muted">Student · City · Email · Phone</p><div class="fake-line short"></div><b>CAREER OBJECTIVE</b><div class="fake-line"></div><div class="fake-line mid"></div><br><b>EDUCATION</b><div class="fake-line"></div><div class="fake-line mid"></div><br><b>PROJECTS & SKILLS</b><div class="fake-line"></div><div class="fake-line short"></div></div></div>
-</div></section>
-<section class="section"><h2 class="section-title">Everything you need, in one place</h2><p class="muted">A simple workflow from your first detail to your final PDF.</p>
-<div class="grid">
-  <article class="card"><div class="iconbox">01</div><h3>Add your details</h3><p class="muted">Enter education, skills, projects, achievements and more.</p></article>
-  <article class="card"><div class="iconbox">02</div><h3>Choose your style</h3><p class="muted">Explore professional layouts, fonts and accent colours.</p></article>
-  <article class="card"><div class="iconbox">03</div><h3>Preview and download</h3><p class="muted">Review your resume and export it as PDF or PNG.</p></article>
-</div></section>
-</main>
-  <div id="siteFooter"></div>
-  <script src="js/firebase-config.js"></script>
-  <script type="module" src="js/firebase-init.js"></script>
-  <script src="js/common.js"></script>
-  <script>document.addEventListener("DOMContentLoaded",()=>mountShell("Home"));</script>
+
+    <main class="auth-page">
+
+        <a class="brand" href="index.html">
+            Resume <span>Craft</span>
+        </a>
+
+        <div class="panel auth-panel">
+
+            <h1 style="color:var(--navy)">
+                Welcome to Resume Craft
+            </h1>
+
+            <p class="muted">
+                Explore our resume-building platform.
+            </p>
+
+            <div class="notice warning" role="status">
+                <b>Demo Mode</b>
+                <p>
+                    Resume Craft is currently a demonstration project.
+                    User registration and account authentication
+                    are not available yet.
+                </p>
+            </div>
+
+            <h3>What can you explore?</h3>
+
+            <ul>
+                <li>Resume templates</li>
+                <li>Resume creation</li>
+                <li>Resume preview</li>
+                <li>PDF export</li>
+            </ul>
+
+            <button
+                id="enterDemo"
+                type="button"
+                style="width:100%;margin-top:18px">
+                Explore Demo
+            </button>
+
+            <p class="hint" style="margin-top:16px">
+                No password or account information is required
+                to explore this demonstration.
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="js/common.js"></script>
+
+    <script>
+        document.getElementById("enterDemo")
+            .addEventListener("click", function () {
+
+                localStorage.setItem(
+                    "rc_user",
+                    JSON.stringify({
+                        email: "demo@example.com",
+                        provider: "demo"
+                    })
+                );
+
+                sessionStorage.removeItem("rc_session_only");
+
+                window.location.href = "index.html";
+            });
+    </script>
+
 </body>
 </html>
