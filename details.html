@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Information | Resume Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="container">
+<div class="pagehead"><h1>Build your resume</h1><p class="muted">Complete the sections that apply to you. Optional details can be left blank or marked NIL.</p></div>
+<div class="layout"><aside class="panel sidebar"><a class="active" href="details.html">Personal & Education</a><a href="templates.html">Choose template</a><a href="preview.html">Preview</a><a href="download.html">Download</a></aside>
+<div class="content"><form id="resumeForm">
+<section class="panel"><h2>Personal information</h2><div class="form-grid">
+<div class="field"><label>Full name <span class="required">*</span></label><input id="fullName" required></div>
+<div class="field"><label>Email <span class="required">*</span></label><input id="email" type="email" required></div>
+<div class="field"><label>Phone number <span class="required">*</span></label><input id="phone" type="tel" required></div>
+<div class="field"><label>City <span class="required">*</span></label><input id="city" required></div>
+<div class="field"><label>State</label><input id="state"></div><div class="field"><label>Country <span class="required">*</span></label><input id="country" required></div>
+<div class="field"><label>Father's name (optional)</label><input id="fatherName" placeholder="Optional; normally omit from professional resumes"></div>
+<div class="field"><label>Mother's name (optional)</label><input id="motherName" placeholder="Optional; normally omit from professional resumes"></div>
+<div class="field"><label>LinkedIn profile (optional)</label><input id="linkedin" placeholder="Paste profile URL"><select id="linkedinNil"><option value="value">Enter a value</option><option value="nil">NIL</option></select></div>
+<div class="field"><label>GitHub profile (optional)</label><input id="github" placeholder="Paste profile URL"><select id="githubNil"><option value="value">Enter a value</option><option value="nil">NIL</option></select></div>
+<div class="field"><label>Portfolio (optional)</label><input id="portfolio" placeholder="Paste website URL"><select id="portfolioNil"><option value="value">Enter a value</option><option value="nil">NIL</option></select></div>
+<div class="field"><label>Date of birth (optional)</label><input id="dob" type="date"><select id="dobNil"><option value="value">Enter a value</option><option value="nil">NIL</option></select></div>
+</div><p class="hint">Professional resumes generally do not need parents' names or date of birth. Include them only if specifically relevant.</p></section>
+<section class="panel"><h2>Career objective <span class="required">*</span></h2><div class="field"><label for="objective">Your objective</label><textarea id="objective" required placeholder="Write 2–3 concise lines about your interests, strengths and goals."></textarea></div><button type="button" class="secondary" id="objectiveHelp" style="margin-top:10px">Show writing tip</button><p id="objectiveTip" class="hint hidden">Try: “Motivated [student/graduate] with an interest in [area], developing skills in [skills]. Seeking an opportunity to contribute, learn and grow in [role/field].” Keep it truthful and specific.</p></section>
+<section class="panel"><h2>Educational qualifications</h2><p class="hint">Add at least one qualification. Marks/CGPA are optional.</p><div id="education"></div><button type="button" class="secondary" id="addEducation">+ Add qualification</button></section>
+<section class="panel"><h2>Technical skills</h2><div class="field"><label for="skills">Skills (separate with commas)</label><textarea id="skills" placeholder="Python, C, HTML, CSS, Basic Electronics"></textarea></div></section>
+<section class="panel"><h2>Projects</h2><p class="hint">One project per line. Separate fields with | in this order: title | description | technologies | contribution.</p><textarea id="projects" placeholder="Smart Attendance System | A prototype to... | Python, OpenCV | Designed the interface"></textarea></section>
+<section class="panel"><h2>Achievements and awards</h2><p class="hint">One per line: title | award/position | year.</p><textarea id="achievements" placeholder="Intercollegiate essay competition | First place | 2025"></textarea></section>
+<section class="panel"><h2>Certifications</h2><p class="hint">One per line: certificate name | organization | year.</p><textarea id="certifications" placeholder="Python Fundamentals | Example Academy | 2026"></textarea></section>
+<section class="panel"><h2>Soft skills and interests</h2><div class="field"><label>Soft skills (comma separated)</label><input id="softSkills" placeholder="Communication, Teamwork, Problem-solving"></div><div class="field" style="margin-top:14px"><label>Interests</label><textarea id="interests" placeholder="Technology, electronics, volunteering..."></textarea></div></section>
+<section class="panel"><h2>Profile photograph (optional)</h2><div class="form-grid"><div class="field"><label>Upload image (JPG/PNG, max 2 MB)</label><input id="photo" type="file" accept="image/*"></div><div class="field"><label>Photo shape</label><select id="photoShape"><option value="rect">Passport-style rectangle</option><option value="circle">Circle</option></select></div></div><img id="photoPreview" class="photo-preview hidden" alt="Photo preview" style="margin-top:12px"></section>
+<div class="actions"><button type="submit">Save and preview resume</button><a class="btn secondary" href="dashboard.html">Back to dashboard</a></div>
+</form></div></div>
+</main>
+  <div id="siteFooter"></div>
+  <script src="js/firebase-config.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/database.js"></script><script src="js/details.js"></script><script>document.addEventListener("DOMContentLoaded",()=>document.getElementById("objectiveHelp").addEventListener("click",()=>document.getElementById("objectiveTip").classList.toggle("hidden")))</script>
+</body>
+</html>

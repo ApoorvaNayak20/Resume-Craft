@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Resume | Resume Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="container">
+<div class="pagehead"><h1>Download your resume</h1><p class="muted">Choose the format that works for your application.</p></div>
+<div class="panel"><h2>Export options</h2><div class="actions"><button id="pdfBtn">Download PDF</button><button id="pngBtn" class="secondary">Download PNG image</button><button id="printBtn" class="outline">Print</button></div><p class="hint">PDF is usually the preferred format for job applications. Check the employer's instructions before submitting.</p></div>
+<div id="resumePaper" class="resume-paper"></div>
+</main>
+  <div id="siteFooter"></div>
+  <script src="js/firebase-config.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="js/database.js"></script><script src="js/preview.js"></script><script src="js/download.js"></script>
+</body>
+</html>

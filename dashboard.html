@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Resume Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="container">
+<div class="pagehead"><h1>Your workspace</h1><p class="muted">Welcome, <b id="welcomeName">there</b>. Let's make your next opportunity count.</p></div>
+<div class="layout"><aside class="panel sidebar"><a class="active" href="dashboard.html">Overview</a><a href="details.html">Personal & Education</a><a href="templates.html">Templates</a><a href="preview.html">Preview</a><a href="download.html">Download</a><a href="#saved">My Resumes</a></aside>
+<div class="content">
+  <section class="panel"><h2>Resume progress</h2><div class="inline"><strong data-progress-text>0%</strong><span class="muted">completion checklist</span></div><div class="progress" style="margin:12px 0"><span data-progress></span></div><p class="hint">This score reflects filled sections, not resume quality or interview outcomes.</p>
+  <div class="actions"><a class="btn" href="details.html">Continue editing</a><a class="btn secondary" href="preview.html">Preview resume</a></div></section>
+  <div class="statrow"><div class="stat"><strong>15</strong>Professional templates</div><div class="stat"><strong>PDF</strong>Export format</div><div class="stat"><strong>PNG</strong>Image export</div></div>
+  <section class="panel" style="margin-top:18px"><h2>Quick actions</h2><div class="actions"><a class="btn secondary" href="details.html">Add information</a><a class="btn secondary" href="templates.html">Choose design</a><a class="btn secondary" href="samples.html">View samples</a><button id="saveCopy" type="button">Save a copy</button></div></section>
+  <section class="panel" id="saved"><h2>My saved resume versions</h2><div id="savedList"></div></section>
+</div></div>
+</main>
+  <div id="siteFooter"></div>
+  <script src="js/firebase-config.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/database.js"></script><script src="js/dashboard.js"></script>
+</body>
+</html>

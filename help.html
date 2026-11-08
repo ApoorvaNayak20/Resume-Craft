@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help | Resume Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="container">
+<div class="pagehead"><h1>Help centre</h1><p class="muted">Find quick answers or send feedback about Resume Craft.</p></div>
+<div class="grid">
+<article class="card"><h3>How do I create a resume?</h3><p class="muted">Open Dashboard, select Personal & Education, complete required fields, save and preview.</p></article>
+<article class="card"><h3>Can I leave optional fields blank?</h3><p class="muted">Yes. Optional information can be left blank. NIL can be used where offered.</p></article>
+<article class="card"><h3>How do I download?</h3><p class="muted">Open Download and choose PDF, PNG or Print.</p></article>
+</div>
+<div class="panel" style="margin-top:18px"><h2>Resume Craft assistant</h2><p class="muted">This starter chatbot answers common website questions using predefined responses.</p><div class="chatbox"><div id="chatLog" class="chatlog"><div class="chatmsg"><b>Resume Craft:</b> Hello! Ask me about templates, saving, photos or PDF downloads.</div></div><form id="chatForm" class="inline"><input id="chatInput" placeholder="Type your question..." aria-label="Your question" required><button>Send</button></form></div></div>
+<div class="panel"><h2>Contact and feedback</h2><form id="contactForm"><div class="form-grid"><div class="field"><label>Your name</label><input required></div><div class="field"><label>Email</label><input type="email" required></div><div class="field full"><label>Message</label><textarea required></textarea></div></div><button type="submit" style="margin-top:14px">Submit feedback</button><p class="hint">Demo form only: connect a backend or trusted form service to receive messages.</p></form></div>
+</main>
+  <div id="siteFooter"></div>
+  <script src="js/firebase-config.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/help.js"></script>
+</body>
+</html>

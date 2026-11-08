@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates | Resume Craft</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="container">
+<div class="pagehead"><h1>Choose your resume design</h1><p class="muted">15 professional starting points. Select a design, font and accent colour.</p></div>
+<div class="panel"><div class="form-grid"><div class="field"><label for="accentColor">Accent colour</label><input id="accentColor" type="color" value="#315b91"></div><div class="field"><label for="fontChoice">Font family</label><select id="fontChoice"><option>Arial</option><option>Calibri</option><option>Georgia</option><option>Garamond</option><option>Verdana</option><option>Trebuchet MS</option></select></div></div><p class="hint">Keep contrast high and choose a readable font for interviews and ATS compatibility.</p></div>
+<div id="templateGrid" class="template-grid"></div><div class="actions"><a class="btn" href="preview.html">Preview selected design</a><a class="btn secondary" href="details.html">Edit information</a></div>
+</main>
+  <div id="siteFooter"></div>
+  <script src="js/firebase-config.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/templates.js"></script>
+</body>
+</html>
