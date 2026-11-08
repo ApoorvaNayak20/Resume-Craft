@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Resume Craft</title>
+    <title>Demo Mode | Resume Craft</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,88 +17,67 @@
 
         <div class="panel auth-panel">
 
-            <h1 style="color:var(--navy)">Welcome back</h1>
+            <h1 style="color:var(--navy)">
+                Welcome to Resume Craft
+            </h1>
 
             <p class="muted">
-                Sign in to continue building your resume.
+                Explore our resume-building platform.
             </p>
 
-            <div id="authMessage" class="notice hidden" role="alert"></div>
+            <div class="notice warning" role="status">
+                <b>Demo Mode</b>
+                <p>
+                    Resume Craft is currently a demonstration project.
+                    User registration and account authentication
+                    are not available yet.
+                </p>
+            </div>
 
-            <form id="loginForm">
+            <h3>What can you explore?</h3>
 
-                <div class="field">
-                    <label for="loginEmail">Email address</label>
-                    <input id="loginEmail" type="email"
-                           placeholder="you@example.com" required>
-                </div>
+            <ul>
+                <li>Resume templates</li>
+                <li>Resume creation</li>
+                <li>Resume preview</li>
+                <li>PDF export</li>
+            </ul>
 
-                <div class="field" style="margin-top:14px">
-                    <label for="loginPassword">Password</label>
-                    <input id="loginPassword" type="password" required>
-                </div>
-
-                <label style="display:flex;gap:8px;align-items:center;margin:14px 0">
-                    <input id="rememberMe" type="checkbox" style="width:auto">
-                    Keep me signed in on this device
-                </label>
-
-                <button type="submit" style="width:100%">
-                    Log in
-                </button>
-
-            </form>
-
-            <button id="googleLogin" class="secondary"
-                    style="width:100%;margin-top:10px">
-                Continue with Google
+            <button
+                id="enterDemo"
+                type="button"
+                style="width:100%;margin-top:18px">
+                Explore Demo
             </button>
 
-            <p class="hint">
-                Yahoo email addresses may be used with email/password
-                registration. Never enter your Yahoo or Gmail account
-                password here.
+            <p class="hint" style="margin-top:16px">
+                No password or account information is required
+                to explore this demonstration.
             </p>
-
-            <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
-
-            <h3>Create an account</h3>
-
-            <form id="registerForm">
-
-                <div class="field">
-                    <label for="registerEmail">Email address</label>
-                    <input id="registerEmail" type="email" required>
-                </div>
-
-                <div class="field" style="margin-top:12px">
-                    <label for="registerPassword">
-                        Create password (minimum 6 characters)
-                    </label>
-                    <input id="registerPassword" type="password"
-                           minlength="6" required>
-                </div>
-
-                <button type="submit" class="secondary"
-                        style="width:100%;margin-top:14px">
-                    Register
-                </button>
-
-            </form>
-
-            <div class="notice warning" style="margin-top:18px">
-                <b>Local demo:</b> demo@example.com / demo123.
-                Configure Firebase for real accounts and cloud storage.
-            </div>
 
         </div>
 
     </main>
 
-    <script src="js/firebase-config.js"></script>
-    <script type="module" src="js/firebase-init.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/auth.js"></script>
+
+    <script>
+        document.getElementById("enterDemo")
+            .addEventListener("click", function () {
+
+                localStorage.setItem(
+                    "rc_user",
+                    JSON.stringify({
+                        email: "demo@example.com",
+                        provider: "demo"
+                    })
+                );
+
+                sessionStorage.removeItem("rc_session_only");
+
+                window.location.href = "index.html";
+            });
+    </script>
 
 </body>
 </html>
