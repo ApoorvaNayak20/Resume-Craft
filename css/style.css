@@ -165,3 +165,35 @@ textarea { min-height: 100px; resize: vertical; }
   .container { width: 100%; }
   .resume-paper { box-shadow: none; max-width: none; margin: 0; }
 }
+
+/* Login page layout */
+
+.auth-page {
+    width: min(520px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.auth-page > .brand {
+    display: inline-block;
+    margin-bottom: 22px;
+}
+
+.auth-panel {
+    width: 100%;
+    margin: 0;
+}
+
+.auth-panel h1 {
+    font-size: 2rem;
+}
+
+@media (max-width: 580px) {
+    .auth-page {
+        padding: 24px 0;
+    }
+
+    .auth-panel {
+        padding: 20px;
+    }
+}
